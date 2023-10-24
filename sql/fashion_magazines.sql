@@ -1,7 +1,7 @@
 -- Add your sql here
 SELECT
     c.customer_name AS Customer,
-    SUM(s.price_per_month * s.subscription_length) AS "Amount Due"
+    PRINTF('$%.2f', SUM(s.price_per_month * s.subscription_length * 1.0)) AS "Amount Due"
 FROM
     customers c
 JOIN
